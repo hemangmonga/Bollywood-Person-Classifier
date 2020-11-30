@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bollywood Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'dropzone.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'app.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Person Classifier</a>
+    </nav>
+  
+    <div class="container">
+                    <form action="/file-upload" class="dropzone" id="dropzone">
+                        <div class="dz-message needsclick">
+                            <image src="{{url_for('static', filename = 'images/upload.png')}}" width="50vw" height="50vw" ><br>
+                            <span class="note needsclick">Drop files here or click to upload</span>
+                        </div>
+                    </form>
+                   
+                <div class="row mt-3">
+                    
+                        <button id="submitBtn" type="button" class="btn btn-success" style="width: 180px; margin-left:42%;" >Classify</button>
+                        
+                    </div>
+                    <div class="row mt-4">
+                    
+                    
+                    <h3 id="demo" style=" text-align:center" ></h3>
+                    </div>                
+                </div>    
+                
+            
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face</p>    
+            </div>
+            
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+           
+            
+        </div>
+
+    </div>
+
+   
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{{url_for('static', filename = 'dropzone.min.js')}}"></script>
+<script src="{{url_for('static', filename = 'app.js')}}"></script>
+</html>
